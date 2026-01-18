@@ -1,7 +1,7 @@
 """Mock platform exposing deterministic in-process mock tools."""
 
 from mock_platform.context import ToolContext
-from mock_platform.models import Contact, Conversation, Message
+from mock_platform.models import Contact, Conversation, Memo, Message
 from mock_platform.registry import ToolRegistry
 from mock_platform.seeds import MOCK_DELIVERY_DELAY_MS, default_state_factory
 from mock_platform.state import Clock, InMemoryStateStore
@@ -19,4 +19,5 @@ __all__ = [
     "Contact",
     "Message",
     "Conversation",
+    "Memo",
 ]

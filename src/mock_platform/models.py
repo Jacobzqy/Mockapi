@@ -52,3 +52,18 @@ class Conversation:
     def to_dict(self) -> Dict[str, Any]:
         """Return dict representation."""
         return asdict(self)
+
+
+@dataclass
+class Memo:
+    """Memo record."""
+
+    memo_id: str
+    title: str
+    content: str
+    created_at: int
+    updated_at: int
+
+    def to_dict(self) -> Dict[str, Any]:
+        """Return dict representation."""
+        return asdict(self)

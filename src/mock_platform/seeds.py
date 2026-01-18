@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any, Dict
 
-from mock_platform.models import Contact
+from mock_platform.models import Contact, Memo
 
 MOCK_DELIVERY_DELAY_MS = 500
 
@@ -17,8 +17,16 @@ def default_state_factory() -> Dict[str, Any]:
     """
     anders = Contact(contact_id="anders", name="Anders", phones=[{"e164": "+15550001111"}])
     contacts = {anders.contact_id: anders.to_dict()}
+    memo_seed = Memo(
+        memo_id="decision",
+        title="Decision",
+        content="Casey is the successful candidate",
+        created_at=0,
+        updated_at=0,
+    )
     return {
         "contacts": contacts,
+        "memos": {memo_seed.memo_id: memo_seed.to_dict()},
         "messages": {},
         "conversations": {},
         "delivery_queue": [],
